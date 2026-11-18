@@ -38,7 +38,7 @@ Abra **Issues**, revise as três issues e escolha uma que tenha valor claro e um
 5. Envie o seguinte prompt:
 
    ```plaintext
-   Implement this issue completely. Keep the single-file, dependency-free design, test the behavior in the integrated browser, and summarize the changes when finished.
+   Implemente esta issue por completo. Mantenha o design em um único arquivo e sem dependências, teste o comportamento no navegador integrado e, ao terminar, resuma as alterações.
    ```
 
 A nova worktree mantém esse recurso isolado da branch padrão até que você esteja pronto para revisá-lo e mesclá-lo.

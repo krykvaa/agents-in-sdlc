@@ -35,11 +35,11 @@ Agora, você pedirá à skill do Microsoft Foundry para gerar a estrutura do age
 1. Insira o seguinte prompt no Copilot CLI:
 
     ```text
-    Use the Microsoft Foundry Skill to scaffold a hosted Backer Concierge in this existing repository using the project and model deployment we selected. Start from the Python 3.13 Basic hosted-agent sample, use Microsoft Agent Framework with the Responses API and code deployment, and keep the agent in agent/backer-concierge. Keep one azure.yaml at the repository root with a service using host: azure.ai.agent.
+    Use a skill do Microsoft Foundry para criar a estrutura inicial de um Backer Concierge hospedado neste repositório existente, usando o projeto e a implantação de modelo que selecionamos. Comece pelo exemplo de agente hospedado Basic do Python 3.13, use o Microsoft Agent Framework com a API Responses e a implantação de código e mantenha o agente em agent/backer-concierge. Mantenha um único azure.yaml na raiz do repositório, com um serviço que use host: azure.ai.agent.
 
-    Ground every answer in db/catalog.json. Never invent games, publishers, ratings, funding totals, backer counts, pledge tiers, prices, player counts, play times, or release dates. Ask one short clarifying question when a request is vague and preserve conversation context. Ensure the catalog is copied into the deployable service during preparation so the deployed agent never depends on a file outside its service directory. Add focused tests for catalog loading and grounding behavior.
+    Fundamente todas as respostas em db/catalog.json. Nunca invente jogos, editoras, classificações, totais arrecadados, números de apoiadores, níveis de contribuição, preços, números de jogadores, tempos de jogo ou datas de lançamento. Quando uma solicitação for vaga, faça uma pergunta curta para esclarecê-la e preserve o contexto da conversa. Durante a preparação, garanta que o catálogo seja copiado para o serviço implantável, para que o agente implantado nunca dependa de um arquivo fora do diretório do serviço. Adicione testes direcionados para o carregamento do catálogo e o comportamento de fundamentação.
 
-    Scaffold and test locally, but do not deploy the hosted agent yet. Stop and ask me to authenticate if needed.
+    Crie a estrutura e teste localmente, mas ainda não implante o agente hospedado. Se necessário, pare e peça que eu faça a autenticação.
     ```
 
 2. Acompanhe a sessão para responder a perguntas sobre o projeto do Foundry, a implantação do modelo, o nome do agente ou o ambiente.
@@ -79,7 +79,7 @@ Agora, você pedirá à skill do Microsoft Foundry para gerar a estrutura do age
 4. Peça ao Copilot para executar os testes específicos e inspecionar a configuração gerada antes de iniciar o serviço:
 
     ```text
-    Run the focused Backer Concierge tests. Then verify that the selected model deployment, Responses API protocol, service path, startup command, catalog preparation step, and azure.ai.agent host configuration are consistent. Fix only problems in this hosted-agent project and rerun the failed checks.
+    Execute os testes direcionados do Backer Concierge. Em seguida, verifique se a implantação de modelo selecionada, o protocolo da API Responses, o caminho do serviço, o comando de inicialização, a etapa de preparação do catálogo e a configuração host: azure.ai.agent são consistentes. Corrija somente os problemas deste projeto de agente hospedado e execute novamente as verificações que falharam.
     ```
 
     Não continue até que os testes específicos sejam aprovados.
@@ -102,15 +102,15 @@ Agora, você verificará a fundamentação das respostas e o comportamento de co
 3. Volte ao Copilot CLI no primeiro terminal e insira:
 
     ```text
-    Test the running Backer Concierge through its Responses API. Run each acceptance prompt below, preserve the response ID for the two-turn conversation test, and compare every response with the expected behavior. Show a concise pass or fail table and the evidence for any failure. Do not change code yet.
+    Teste o Backer Concierge em execução por meio da API Responses. Execute cada prompt de aceitação abaixo, preserve o ID da resposta para o teste de conversa em duas interações e compare todas as respostas com o comportamento esperado. Mostre uma tabela concisa de aprovações e falhas e as evidências de cada falha. Ainda não altere o código.
 
-    1. "I love puzzle games about tracking down bugs. What should I back?" Expected: only real catalog titles with correct details.
-    2. "How much has Pipeline Conquest raised so far, and how many backers does it have?" Expected: explains that the catalog doesn't track funding or backers, then offers known information.
-    3. "I need something for four players, about an hour long." Expected: explains that player count and play time are missing, then asks one actionable follow-up question.
-    4. "Do you have Wingspan? If not, what's the closest thing you've got?" Expected: says Wingspan isn't in the catalog, doesn't describe it from outside knowledge, and pivots to catalog titles.
-    5. "Recommend me something good." Expected: asks one short clarifying question and doesn't recommend a title yet.
-    6. "What are your three highest rated games?" Expected: the three highest-rated catalog entries in the correct order with correct ratings.
-    7. In one conversation, send "Show me two highly rated strategy games." followed by "Which of those has the higher rating?" Expected: the second response compares only the two earlier titles using catalog ratings.
+    1. "Adoro jogos de quebra-cabeça sobre rastrear bugs. Qual jogo devo apoiar?" Esperado: somente títulos reais do catálogo, com detalhes corretos.
+    2. "Quanto o Pipeline Conquest arrecadou até agora e quantas pessoas o apoiam?" Esperado: explica que o catálogo não informa valores arrecadados nem número de apoiadores e, em seguida, apresenta informações disponíveis.
+    3. "Preciso de um jogo para quatro pessoas, com duração de cerca de uma hora." Esperado: explica que o número de jogadores e a duração não estão disponíveis e, em seguida, faz uma pergunta objetiva para esclarecer o pedido.
+    4. "Vocês têm o Wingspan? Se não, qual jogo disponível é o mais parecido?" Esperado: informa que Wingspan não está no catálogo, não o descreve com base em conhecimento externo e indica títulos do catálogo.
+    5. "Recomende um jogo bom." Esperado: faz uma pergunta curta para esclarecer o pedido e ainda não recomenda um título.
+    6. "Quais são os três jogos mais bem avaliados?" Esperado: os três jogos mais bem avaliados do catálogo, na ordem e com as classificações corretas.
+    7. Na mesma conversa, envie "Mostre dois jogos de estratégia bem avaliados." e depois "Qual desses tem a maior classificação?". Esperado: a segunda resposta compara somente os dois títulos mencionados antes, usando as classificações do catálogo.
     ```
 
     ![Testes da implantação do agente hospedado aprovados](../../../../_images/cli-8-passing-acceptance-scenarios.png)
@@ -125,7 +125,7 @@ Com os testes de aceitação locais aprovados, você está pronto para implantar
 2. Volte ao Copilot CLI e insira o seguinte prompt. Revise os recursos propostos e o custo estimado antes de aprovar a implantação:
 
     ```text
-    Continue with the Microsoft Foundry Skill workflow. Review the hosted agent for deployment readiness, then deploy it to Microsoft Foundry, show the deployment status and playground link, and invoke it remotely with: "I love puzzle games about tracking down bugs. What should I back?"
+    Continue o fluxo de trabalho da skill do Microsoft Foundry. Revise se o agente hospedado está pronto para implantação e, em seguida, implante-o no Microsoft Foundry, mostre o status da implantação e o link do playground e invoque-o remotamente com: "Adoro jogos de quebra-cabeça sobre rastrear bugs. Qual jogo devo apoiar?"
     ```
 
 3. Se for solicitado que você selecione uma fonte para a suíte de avaliação, escolha **Não, configurar mais tarde**.

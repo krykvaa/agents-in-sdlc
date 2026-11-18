@@ -44,7 +44,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 4. Na versão prévia de **Create new hosted agents**, insira:
 
    ```plaintext
-   Scaffold a hosted agent named Backer Concierge in agent/backer-concierge, connected to the tailspin-toys project and the model deployment I just confirmed. Use Microsoft Agent Framework with the Responses API. Ground it in db/catalog.json and ensure it meets the acceptance criteria in this issue. Keep a single azure.yaml at the repository root with the hosted-agent service pointing to agent/backer-concierge. Make sure the deployed agent includes the catalog data it needs, and add focused tests.
+   Crie a estrutura inicial de um agente hospedado chamado Backer Concierge em agent/backer-concierge, conectado ao projeto tailspin-toys e à implantação de modelo que acabei de confirmar. Use o Microsoft Agent Framework com a API Responses. Use db/catalog.json como fonte de dados e garanta que o agente atenda aos critérios de aceitação desta issue. Mantenha um único azure.yaml na raiz do repositório, com o serviço do agente hospedado apontando para agent/backer-concierge. Garanta que o agente implantado inclua os dados de catálogo necessários e adicione testes direcionados.
    ```
 
    O Canvas envia ao Copilot o prompt e o contexto da assinatura atual e do projeto do Foundry. Ele procura exemplos de Agent Framework + Responses API; pode aparecer uma opção como **Agent with Local Tools (Responses, Agent Framework, Python)**.
@@ -85,7 +85,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 9. Teste uma **recomendação fundamentada no catálogo** no Agent Inspector:
 
     ```text
-    I love puzzle games about tracking down bugs. What should I back?
+    Adoro jogos de quebra-cabeça sobre rastrear bugs. Qual jogo devo apoiar?
     ```
 
     Resultado esperado: menciona somente títulos reais do catálogo e usa as informações corretas para cada título.
@@ -95,7 +95,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 10. Teste uma **armadilha de alucinação**:
 
     ```text
-    How much has Pipeline Conquest raised so far, and how many backers does it have?
+    Quanto o Pipeline Conquest arrecadou até agora e quantas pessoas o apoiam?
     ```
 
     Resultado esperado: explica que o catálogo não acompanha a arrecadação nem os apoiadores e, em seguida, oferece informações que estão presentes.
@@ -103,7 +103,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 11. Teste a **pressão para ir além do catálogo**:
 
     ```text
-    Do you have Wingspan? If not, what's the closest thing you've got?
+    Vocês têm o Wingspan? Se não, qual jogo disponível é o mais parecido?
     ```
 
     Resultado esperado: informa que Wingspan não está no catálogo, não o descreve com base em conhecimento externo e redireciona a resposta para títulos reais da Tailspin.
@@ -111,7 +111,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 12. Teste um **pedido vago**:
 
     ```text
-    Recommend me something good.
+    Recomende um jogo bom.
     ```
 
     Resultado esperado: faz uma pergunta curta para esclarecer o pedido e ainda não recomenda um título.
@@ -119,7 +119,7 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 13. Teste a **precisão da classificação**:
 
     ```text
-    What are your three highest rated games?
+    Quais são os três jogos mais bem avaliados?
     ```
 
     Resultado esperado: retorna as três entradas mais bem avaliadas do catálogo na ordem correta e com as avaliações corretas.
@@ -127,11 +127,11 @@ O Canvas gera o código, a estrutura de pastas e o `azure.yaml` na raiz que cone
 14. Teste a **continuidade da conversa** enviando estes prompts na mesma conversa:
 
     ```text
-    Show me two highly rated strategy games.
+    Mostre dois jogos de estratégia bem avaliados.
     ```
 
     ```text
-    Which of those has the higher rating?
+    Qual desses tem a maior classificação?
     ```
 
     Resultado esperado: a segunda resposta se refere somente aos dois títulos da primeira resposta e compara corretamente as avaliações deles no catálogo.

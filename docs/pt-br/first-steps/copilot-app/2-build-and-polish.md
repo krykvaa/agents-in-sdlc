@@ -42,7 +42,7 @@ Recolha a barra lateral esquerda e o painel do navegador à direita e revise `in
 3. Envie o seguinte prompt:
 
    ```plaintext
-   Make the selected element feel more like a mission-control display. Keep it accessible and preserve the existing light and dark themes.
+   Faça com que o elemento selecionado se pareça mais com um painel de controle de missão. Mantenha a acessibilidade e preserve os temas claro e escuro existentes.
    ```
 
 4. Observe a atualização do navegador integrado e verifique a alteração.

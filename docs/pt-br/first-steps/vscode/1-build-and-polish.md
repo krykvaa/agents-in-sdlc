@@ -35,7 +35,7 @@ O navegador integrado pode enviar um elemento específico diretamente para a con
 3. Envie o seguinte prompt e observe a prévia recarregar:
 
    ```plaintext
-   Using the selected element, make the answer buttons feel more tactile: add a subtle press state, a clearer focus ring for keyboard users, and a smoother transition into the correct and incorrect colors. Change nothing else.
+   Usando o elemento selecionado, deixe os botões de resposta mais táteis: adicione um estado de pressionamento sutil, um indicador de foco mais evidente para quem usa o teclado e uma transição mais suave para as cores de resposta correta e incorreta. Não altere mais nada.
    ```
 
 4. Leia o diff em **Source Control** antes de manter a alteração.

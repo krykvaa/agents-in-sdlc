@@ -46,7 +46,7 @@ O repositório de exemplo inclui um script de exportação que fornece ao agente
 8. Nesta sessão de worktree vinculada à issue, substitua o prompt padrão `/fix-issue` na caixa de prompt por:
 
    ```plaintext
-   Install the project dependencies, seed the database, then run the existing db:export script. Show me the command output and summarize the shape and grounding limits of db/catalog.json.
+   Instale as dependências do projeto, prepare o banco de dados e execute o script db:export existente. Mostre a saída do comando e resuma a estrutura e os limites das informações disponíveis em db/catalog.json.
    ```
 
 9. Revise a saída dos comandos. O Copilot deve executar o equivalente a:
@@ -92,7 +92,7 @@ Criar primeiro o projeto e a implantação no chat garante que o Canvas se conec
 13. Na mesma sessão da issue, insira:
 
     ```plaintext
-    Use the Microsoft Foundry skill to create a resource group named rg-tailspin-toys and a Foundry project named tailspin-toys.
+    Use a skill do Microsoft Foundry para criar um grupo de recursos chamado rg-tailspin-toys e um projeto do Foundry chamado tailspin-toys.
     ```
 
     ![Criar o projeto do Foundry](../../../../_images/app-8-foundry-project-created.png)
@@ -100,7 +100,7 @@ Criar primeiro o projeto e a implantação no chat garante que o Canvas se conec
 14. Peça ao Copilot que recomende um modelo. Os critérios de aceitação da issue já estão no contexto porque a sessão foi iniciada a partir da issue:
 
     ```plaintext
-    Use the Microsoft Foundry skill to recommend two or three current chat models in the tailspin-toys project that meet this issue's acceptance criteria. Explain the tradeoffs and wait for me to choose.
+    Use a skill do Microsoft Foundry para recomendar dois ou três modelos de chat atuais no projeto tailspin-toys que atendam aos critérios de aceitação desta issue. Explique as vantagens e desvantagens e aguarde minha escolha.
     ```
 
 15. Confirme que o Copilot carrega a skill `microsoft-foundry` e escolha um modelo disponível com base nas vantagens e limitações de cada opção. O guia de início rápido de agentes hospedados do Microsoft Foundry usa atualmente `gpt-5.4-mini`, mas a disponibilidade e a cota variam de acordo com a região.
@@ -110,7 +110,7 @@ Criar primeiro o projeto e a implantação no chat garante que o Canvas se conec
 16. Peça ao Copilot que implante sua seleção, revisando o projeto de destino e o custo antes de aprovar:
 
     ```plaintext
-    Deploy the model I selected to the tailspin-toys Foundry project, using the model name as the deployment name.
+    Implante o modelo selecionado no projeto tailspin-toys do Foundry, usando o nome do modelo como nome da implantação.
     ```
 
 > [!TIP]

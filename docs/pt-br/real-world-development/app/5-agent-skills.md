@@ -46,7 +46,7 @@ As skills podem ser chamadas diretamente com um comando de barra (`/`) ou por me
 2. Use o prompt a seguir para chamar a skill:
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    Execute a skill quality-checks para rodar testes de unidade, lint e verificações de tipos.
     ```
 
 3. Observe o relatório ao final.
@@ -62,7 +62,7 @@ Queremos um relatório melhor, que mostre o que foi executado, se teve sucesso e
     ```markdown
     ## Results output formatting
 
-    Upon completion, report each command that ran and whether it passed, failed, or was blocked. Include test counts, durations, errors, warnings, and other metrics only when the tool reports them. Identify the next action for any failure or blocker, and never describe a skipped or incomplete check as passed.
+    Ao concluir, informe cada comando executado e se ele foi aprovado, falhou ou foi bloqueado. Inclua contagens de testes, durações, erros, avisos e outras métricas somente quando a ferramenta as informar. Indique a próxima ação para cada falha ou bloqueio e nunca descreva uma verificação ignorada ou incompleta como aprovada.
     ```
 
 O arquivo será salvo automaticamente.
@@ -75,7 +75,7 @@ Com a alteração feita, vamos vê-la em ação! Usaremos exatamente o mesmo pro
 2. Use o prompt a seguir para chamar a skill:
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    Execute a skill quality-checks para rodar testes de unidade, lint e verificações de tipos.
     ```
 
 3. Observe o relatório ao final.

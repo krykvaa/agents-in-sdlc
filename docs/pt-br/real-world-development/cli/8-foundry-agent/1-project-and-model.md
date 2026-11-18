@@ -91,7 +91,7 @@ O agente precisa do catálogo em um arquivo que possa ler. O exemplo do Tailspin
 1. Volte ao Copilot CLI e insira:
 
     ```text
-    Install the project dependencies, seed the database, then run the existing db:export script. Show me the command output and summarize the shape and grounding limits of db/catalog.json.
+    Instale as dependências do projeto, prepare o banco de dados e execute o script db:export existente. Mostre a saída do comando e resuma a estrutura e os limites das informações disponíveis em db/catalog.json.
     ```
 
     O Copilot deve executar o equivalente a:
@@ -113,7 +113,7 @@ Antes de o Copilot criar recursos do Azure ou adicionar código do agente, você
 1. Insira o seguinte prompt:
 
     ```text
-    /plan Use the Microsoft Foundry Skill to plan a Backer Concierge hosted agent for this existing Tailspin Toys repository. Use a public Foundry project, Python 3.13, Microsoft Agent Framework, the Responses API, the Basic sample, and code deployment. Keep the agent in agent/backer-concierge and keep one azure.yaml at the repository root. Ground every answer in db/catalog.json, preserve conversation context, and add focused tests. Include project setup, model selection, local testing, deployment, remote invocation, estimated cost-bearing resources and cleanup.
+    /plan Use a skill do Microsoft Foundry para planejar um agente Backer Concierge hospedado para este repositório Tailspin Toys existente. Use um projeto público do Foundry, Python 3.13, Microsoft Agent Framework, a API Responses, o exemplo Basic e a implantação de código. Mantenha o agente em agent/backer-concierge e um único azure.yaml na raiz do repositório. Fundamente todas as respostas em db/catalog.json, preserve o contexto da conversa e adicione testes direcionados. Inclua a configuração do projeto, a seleção do modelo, os testes locais, a implantação, a invocação remota, os recursos com custo estimado e a limpeza.
     ```
 
 2. Revise o plano proposto. Confirme que o Copilot pretende usar a skill `microsoft-foundry` e que separa o agente hospedado do aplicativo Astro existente. Se notar algo preocupante ou inesperado, solicite revisões antes de prosseguir.
@@ -126,7 +126,7 @@ O agente precisa de um projeto do Foundry e de um modelo implantado. Você usar�
 1. Peça ao Copilot para criar o projeto. Antes de aprovar a criação de recursos, verifique a assinatura, a região, a cota e o custo estimado selecionados:
 
     ```text
-    Use the Microsoft Foundry Skill to create a public Foundry project for this project. Use the resource group rg-tailspin-toys and project name tailspin-toys.
+    Use a skill do Microsoft Foundry para criar um projeto público do Foundry para este projeto. Use o grupo de recursos rg-tailspin-toys e o nome de projeto tailspin-toys.
     ```
 
     ![Criação de um projeto público do Foundry](../../../../_images/cli-8-create-foundry-project.png)
@@ -134,7 +134,7 @@ O agente precisa de um projeto do Foundry e de um modelo implantado. Você usar�
 2. Quando o projeto estiver pronto, peça ao Copilot para recomendar um modelo:
 
     ```text
-    Use the Microsoft Foundry Skill to recommend two or three current chat models available in the tailspin-toys project for the Backer Concierge acceptance criteria in the issue titled "Add a Backer Concierge assistant for catalog questions". Prioritize low latency, instruction following, grounding fidelity, available quota, and models that aren't approaching retirement. There is no complex math or multi-step planning. Explain the tradeoffs and wait for me to choose a model from the recommended options.
+    Use a skill do Microsoft Foundry para recomendar dois ou três modelos de chat atuais disponíveis no projeto tailspin-toys que atendam aos critérios de aceitação do Backer Concierge na issue intitulada "Adicionar um assistente Backer Concierge para perguntas sobre o catálogo". Priorize baixa latência, cumprimento de instruções, fidelidade às fontes, cota disponível e modelos que não estejam próximos do fim do ciclo de vida. Não há cálculos complexos nem planejamento em várias etapas. Explique as vantagens e desvantagens e aguarde que eu escolha uma das opções recomendadas.
     ```
 
     O Copilot pode solicitar que você selecione um modelo entre as opções recomendadas.
@@ -146,7 +146,7 @@ O agente precisa de um projeto do Foundry e de um modelo implantado. Você usar�
 3. Selecione um modelo entre as opções recomendadas e peça ao Copilot para implantar sua escolha. Revise a capacidade e o custo antes de aprovar a implantação:
 
     ```text
-    Deploy the model we selected to the tailspin-toys Foundry project and use the model name as the deployment name. Choose an SKU with available quota, ask me to confirm the capacity before deployment. After deployment, show me the deployment status.
+    Implante o modelo selecionado no projeto tailspin-toys do Foundry e use o nome do modelo como nome da implantação. Escolha um SKU com cota disponível e peça que eu confirme a capacidade antes da implantação. Depois, mostre o status da implantação.
     ```
 
     ![Implantação do modelo selecionado](../../../../_images/cli-8-deploy-foundry-model.png)
@@ -195,7 +195,7 @@ Primeiro, você atribuirá à conta conectada a função **Foundry Project Manag
 4. Volte ao Copilot CLI e insira:
 
     ```text
-    Use the Microsoft Foundry Skill to test my deployed model directly in the tailspin-toys project without creating an agent. Ground it with content from @db/catalog.json and ask: "I love puzzle games about tracking down bugs. What should I back, and how much funding has it raised?" Show me the response and useful metadata like tokens used and response time (only if you can obtain it). Do not change files or create resources.
+    Use a skill do Microsoft Foundry para testar diretamente o modelo implantado no projeto tailspin-toys, sem criar um agente. Use o conteúdo de @db/catalog.json como fonte e pergunte: "Adoro jogos de quebra-cabeça sobre rastrear bugs. Qual jogo devo apoiar e quanto ele arrecadou?". Mostre a resposta e metadados úteis, como o número de tokens usados e o tempo de resposta, somente se puder obtê-los. Não altere arquivos nem crie recursos.
     ```
 
     ![Resposta do modelo do Foundry recomendando um jogo real do catálogo e informando que os dados de arrecadação não estão disponíveis](../../../../_images/cli-8-foundry-agent-response.png)
